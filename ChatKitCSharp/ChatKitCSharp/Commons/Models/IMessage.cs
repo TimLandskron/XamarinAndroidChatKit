@@ -1,3 +1,4 @@
+using Java.Util;
 using System;
 
 namespace ChatKitCSharp.Commons.Models
@@ -7,6 +8,6 @@ namespace ChatKitCSharp.Commons.Models
         string Id { get; }
         string Text { get; }
         IUser User { get; }
-        DateTime CreatedAt { get; }
+        Date CreatedAt { get; }
     }
 }
