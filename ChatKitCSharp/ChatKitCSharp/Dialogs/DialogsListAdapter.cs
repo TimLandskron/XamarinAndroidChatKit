@@ -16,6 +16,7 @@ using ChatKitCSharp.Utils;
 using Android.Util;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Java.Util;
 
 namespace ChatKitCSharp.Dialogs
 {
@@ -199,11 +200,11 @@ namespace ChatKitCSharp.Dialogs
     {
         public int Compare(DIALOG x, DIALOG y)
         {
-            if (x.LastMessage.CreatedAt > y.LastMessage.CreatedAt)
+            if (x.LastMessage.CreatedAt.After(y.LastMessage.CreatedAt))
             {
                 return -1;
             }
-            else if (x.LastMessage.CreatedAt < y.LastMessage.CreatedAt)
+            else if (x.LastMessage.CreatedAt.Before(y.LastMessage.CreatedAt))
             {
                 return 1;
             }
@@ -424,7 +425,7 @@ namespace ChatKitCSharp.Dialogs
 
             // Set date
             string formattedDate = null;
-            DateTime lastMessageDate = dialog.LastMessage.CreatedAt;
+            Date lastMessageDate = dialog.LastMessage.CreatedAt;
             if (datesFormatter != null) formattedDate = datesFormatter.Format(lastMessageDate);
             tvDate.Text = formattedDate == null ? GetDateString(lastMessageDate) : formattedDate;
 
@@ -453,9 +454,9 @@ namespace ChatKitCSharp.Dialogs
             }
         }
 
-        protected string GetDateString(DateTime date)
+        protected string GetDateString(Date date)
         {
-            return DateFormatter.Format(date, DateFormatter.Template.TIME);
+            return DateFormatter.Format(date, DateFormatter.Template.STRING_DAY_MONTH_YEAR_TIME);
         }
 
     }

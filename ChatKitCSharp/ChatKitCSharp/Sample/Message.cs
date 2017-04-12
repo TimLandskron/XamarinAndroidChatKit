@@ -22,6 +22,6 @@ namespace ChatKitCSharp.Sample
 
         public IUser User { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public Date CreatedAt { get; set; }
     }
 }

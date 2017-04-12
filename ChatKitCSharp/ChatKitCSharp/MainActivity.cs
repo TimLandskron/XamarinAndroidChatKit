@@ -7,6 +7,7 @@ using ChatKitCSharp.Sample;
 using ChatKitCSharp.Dialogs;
 using ChatKitCSharp.Commons;
 using System;
+using Java.Util;
 
 namespace ChatKitCSharp
 {
@@ -35,7 +36,7 @@ namespace ChatKitCSharp
                 Id = "1",
                 LastMessage = new ChatKitCSharp.Sample.Message
                 {
-                    CreatedAt = new DateTime(2017, 02, 20, 6, 43, 23),
+                    CreatedAt = new Date(2017, 4, 12, 6, 43),
                     Id = "1",
                     User = new Author
                     {
